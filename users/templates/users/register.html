@@ -1,0 +1,81 @@
+{% extends 'good/home.html' %}
+
+{% load static %}
+
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'users/css/test.css' %}">
+
+{% endblock %}
+{% block title %}{% endblock %}
+{% block content %}
+<form method="post">
+{% csrf_token %}
+<div class="form-error">{{ form.non_field_errors }}</div>
+    <div class="container">
+      <div class="form signup">
+          <h2>Sign Up</h2>
+          <div class="inputBox">
+              {{ form.username }}
+              <i class="fa-regular fa-user"></i>
+              <span>username</span>
+          </div>
+           <div class="inputBox">
+               {{ form.email }}
+               <i class="fa-regular fa-envelope"></i>
+              <span>email address</span>
+          </div>
+          <div class="inputBox">
+              {{ form.password1 }}
+              <i class="fa-solid fa-lock"></i>
+              <span>create password</span>
+          </div>
+          <div class="inputBox">
+              {{ form.password2 }}
+              <i class="fa-solid fa-lock"></i>
+              <span>config password</span>
+          </div>
+          <div class="inputBox">
+              <input type="submit" value="Create Account">
+          </div>
+          <p>Already a member ?<a href="{% url 'login' %}" class="login">log in</a></p>
+      </div>
+  </div>
+
+</form>
+{% endblock %}
+<!--  <div class="container">-->
+<!--      <div class="form signup">-->
+<!--          <h2>Sign Up</h2>-->
+<!--          <div class="inputBox">-->
+<!--              {{ form.username }}-->
+<!--&lt;!&ndash;              <input type="text" required="required">&ndash;&gt;-->
+<!--              <i class="fa-regular fa-user"></i>-->
+<!--              <span>User name</span>-->
+<!--          </div>-->
+<!--           <div class="inputBox">-->
+<!--               {{ form.email }}-->
+<!--&lt;!&ndash;              <input type="text" required="required">&ndash;&gt;-->
+<!--               <i class="fa-regular fa-envelope"></i>-->
+<!--              <span>email</span>-->
+<!--          </div>-->
+<!--          <div class="inputBox">-->
+<!--              {{ form.password1 }}-->
+<!--&lt;!&ndash;              <input type="text" required="required">&ndash;&gt;-->
+<!--              <i class="fa-solid fa-lock"></i>-->
+<!--              <span>password1</span>-->
+<!--          </div>-->
+<!--          <div class="inputBox">-->
+<!--              {{ form.password2 }}-->
+<!--&lt;!&ndash;              <input type="text" required="required">&ndash;&gt;-->
+<!--              <i class="fa-solid fa-lock"></i>-->
+<!--              <span>password2</span>-->
+<!--          </div>-->
+<!--          <div class="inputBox">-->
+<!--              <input type="submit" value="Create Account">-->
+<!--          </div>-->
+<!--          <p>Already a member ?<a href="{% url 'login' %}" class="login">log in</a></p>-->
+<!--      </div>-->
+<!--  </div>-->
+<!--</form>-->
+
+

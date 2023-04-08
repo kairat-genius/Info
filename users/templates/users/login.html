@@ -1,0 +1,56 @@
+{% extends 'good/home.html' %}
+{% load static %}
+
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'users/css/test.css' %}">
+{% endblock %}
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+<div class="form-error">{{ form.non_field_errors }}</div>
+  <div class="container">
+      <div class="form signup">
+          <h2>Sign Up</h2>
+          <div class="inputBox">
+              {{ form.username }}
+              <i class="fa-regular fa-user"></i>
+              <span>username</span>
+          </div>
+          <div class="inputBox">
+              {{ form.password }}
+              <i class="fa-solid fa-lock"></i>
+              <span>create password</span>
+          </div>
+          <div class="inputBox">
+              <input type="submit" value="Create Account">
+          </div>
+          <p>Not Registered ?<a href="{% url 'register' %}" class="create">Crete an account</a></p>
+      </div>
+  </div>
+</form>
+{% endblock %}
+
+<!--      <div class="box">-->
+<!--          <div class="form">-->
+<!--              <h2>login</h2>-->
+<!--              <div class="inputBox">-->
+<!--                  <input type="text" required="required">-->
+<!--                  <span>Username</span>-->
+<!--                  <i></i>-->
+<!--              </div>-->
+<!--              <div class="inputBox">-->
+<!--                  <input type="password" required="required">-->
+<!--                  <span>Password</span>-->
+<!--                  <i></i>-->
+<!--              </div>-->
+<!--              <div class="links">-->
+<!--                  <a href="#">Forgot Password</a>-->
+<!--                  <a href="{% url 'about' %}">Sign up</a>-->
+<!--              </div>-->
+<!--              <input type="submit" value="Войти">-->
+<!--          </div>-->
+<!--      </div>-->
